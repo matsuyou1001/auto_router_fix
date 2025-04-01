@@ -1,0 +1,21 @@
+#!/bin/bash
+# ルーターの設定
+ROUTER_ADDR="192.168.11.1"
+ROUTER_USER="admin"
+ROUTER_PASS="password"
+
+# 疎通テスト・再試行関連の設定
+STATE_FILE="/var/tmp/internet_check_state"
+MAX_RETRY_COUNT=3
+
+# デバッグモードの設定（trueの場合、実際のpingではなくデバッグ用の結果を使用します）
+DEBUG=false
+DEBUG_PING_RESULT=1
+
+# 疎通テスト対象のホスト（複数可）
+PING_HOSTS=("8.8.8.8" "1.1.1.1" "208.67.222.222")
+PING_COUNT=1
+PING_TIMEOUT=5
+
+# ルーター再起動実行のためのダウンタイム閾値（分単位）
+DOWNTIME_THRESHOLD=30
